@@ -21,7 +21,7 @@ session_start();//session starts here
     <!-- Bootstrap CSS -->
 
 
-    <link rel="icon" type="text/css" href="person-bounding-box.svg" class="bg-warning"> 
+    <link rel="icon" type="text/css" href="building.svg" class="bg-warning"> 
     
 
 
@@ -56,7 +56,9 @@ session_start();//session starts here
               <li class="nav-item active">
                 <a class="nav-link text-warning btn btn-outline-warning" href="./index.php#about"><i class="bi bi-"></i> About </a>
               </li>
-              
+              <li class="nav-item active">
+                <a class="nav-link text-warning btn btn-outline-warning" href="./index.php#book"><i class="bi bi-"></i> Book </a>
+              </li>
               
                 <?php 
 
@@ -106,7 +108,7 @@ if(isset($_POST['admin_logout'])){
  ?>
 
 
-<div class="row mt-1 p-1" >
+<div class="row mt-1 p-1" style="height: 300px important!;">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   
   <div class="carousel-inner">
