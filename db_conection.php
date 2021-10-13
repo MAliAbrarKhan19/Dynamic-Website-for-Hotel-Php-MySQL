@@ -1,7 +1,7 @@
 <?php  
  
-$dbcon=mysqli_connect("localhost","root","root","eams");  
+$dbcon=mysqli_connect("localhost","root","root","hotelms");  
 //$dbcon=mysqli_connect("localhost","root","");  
 
-//mysqli_select_db($dbcon,"users");  
+ 
 ?>  

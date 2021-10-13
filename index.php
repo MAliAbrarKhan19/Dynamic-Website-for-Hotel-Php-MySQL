@@ -215,24 +215,43 @@
         <div class="row">
             <div class="col-md-10 offset-md-1">
                 <!-- booking Form -->
-                <form>
-                  <fieldset >
+                <form method="post" enctype="multipart/form-data">
                     <legend class=""> Please fill up the below to book your room</legend>
                     <div class="mb-3">
                       <label class="form-label text-light">Your Info</label>
-                      <input type="text" class="form-control" placeholder="Disabled input">
+                      <input type="text" name="name" value="" class="form-control" placeholder="name">
+                      <input type="text" name="mobile" class="form-control" placeholder="mobile">
+                      <input type="text" name="address" class="form-control" placeholder="Address">
+                      <input type="text" name="country" value="" class="form-control" placeholder="Country">
                     </div>
                     <div class="mb-3">
                       <label class="form-label text-light">Booking Details </label>
-                      <select  class="form-select">
-                        <option>Disabled select</option>
-                      </select>
+                    </div>
+                    <div class="mb-3 p-2">
+                        <label class="text-light">Number of Guests </label>
+                        <input type="text" name="guest_num" class=" col-md-6" placeholder="">
+
+                    </div>
+
+                    <div class="mb-3 p-2">
+                        <label class="text-light">Arrrival Date & Time </label>
+                        <input type="date" name="arrival_date" class=" col-md-3" placeholder="Arrival Date">
+                        <input type="time" name="arrival_time" class=" col-md-3" placeholder="Arrival_Time">
+                    </div>
+
+                    <div class=" mb-3 p-2">
+                        <label class="text-light">Booking From Date </label>
+                      <input type="date" name="bookfromdt" class="col-md-3" placeholder="Book from Date ">
+                        <label class="text-light">Booking To Date </label>
+                      <input type="date" name="bookfromdt" class="col-md-3" placeholder="Book from Date ">
+                      
+                      
+                      <input type="hidden" name="booking_dt_time" value="<?php echo $datetime;?>" class=" col-md-2" placeholder="">
+                      
                     </div>
                     
 
                     <input type="submit" name="submit" value="Submit" class="btn btn-warning">
-
-                  </fieldset>
                 </form>
                 <!-- booking Form -->
             </div>
@@ -241,6 +260,32 @@
     </div>
 </div>
 <!-- Booking  -->
+
+<!-- Booking form php Code Start -->
+<?php include 'db_conection.php'; ?>
+
+<?php 
+if(isset($_POST['register']))  
+{  
+  
+    //$emp_=$_POST['emp_'];  
+
+
+//echo ($emp_name.$emp_mobile.$emp_email.$emp_designation.$emp_ip.$emp_mac.$emp_pass.$emp_logintime.$emp_logouttime);
+  
+
+//insert the user into the database.  
+    $insertdb="insert into employee(emp_name,emp_mobile,emp_email,emp_designation,emp_ip,emp_mac,emp_pass,emp_logintime,emp_logouttime)values('$emp_name','$emp_mobile','$emp_email','$emp_designation','$emp_ip','$emp_mac','$emp_pass','$emp_logintime','$emp_logouttime')";  
+    if(mysqli_query($dbcon,$insertdb))  
+    {  
+        echo"<script>window.open('index.php');</script>";  
+    }
+    else{ echo "<script> alert('Not registered!!');</script>";}  
+}  
+  
+
+?>  
+<!-- Booking form php Code End   -->
 
 
 <?php include 'footer.php'; ?>

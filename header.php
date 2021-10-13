@@ -57,7 +57,7 @@ session_start();//session starts here
                 <a class="nav-link text-warning btn btn-outline-warning" href="./index.php#about"><i class="bi bi-"></i> About </a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link text-warning btn btn-outline-warning" href="./index.php#book"><i class="bi bi-"></i> Book </a>
+                <a class="nav-link text-warning btn btn-outline-warning" href="./index.php#book"><i class="bi bi-"></i> Book Now </a>
               </li>
               
                 <?php 
@@ -159,13 +159,13 @@ if(isset($_POST['admin_logout'])){
 
 <?php 
 date_default_timezone_set("ASIA/DHAKA");
+//$time=date("h:i a ");//hr
 $time=date("H");//hr
 $timemin=date("i");//min
-//$date = date(" h:i a  d-m-Y");
+$datetime = date(" h:i a  d-m-Y");
 $date = date("d-m-Y");
 $day=date("j");
 $month=date("n");
 $year=date("o");
 $timehr=date("H");
-//echo "<h1 class='text-light'>"."time".$time." day".$day." month ".$month." year".$year."</h1>"
-?>
+
